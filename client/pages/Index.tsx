@@ -571,7 +571,7 @@ export default function Index() {
               </Button>
               <Button variant="outline" size="lg" className="gap-2" asChild>
                 <a
-                  href="https://www.linkedin.com/in/surya-dwivedi"
+                  href="www.linkedin.com/in/surya-dwivedi-8a9bb021b"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
