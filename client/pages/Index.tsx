@@ -21,16 +21,8 @@ import DarkModeToggle from "react-dark-mode-toggle";
 import Switch from '@mui/material/Switch';
 
 
-export default function Index() {
-  const [theme, setTheme] = useState("dark");
+export default function Index({ theme ,setTheme}: { theme: string ,setTheme: (theme: string) => void }) {
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.className = savedTheme;
-    }
-  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
