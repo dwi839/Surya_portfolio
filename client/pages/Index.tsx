@@ -18,11 +18,13 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
+import Switch from '@mui/material/Switch';
 
 
 export default function Index() {
   const [theme, setTheme] = useState("light");
   const [isDarkMode, setIsDarkMode] = useState(() => false);
+  
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -126,12 +128,7 @@ export default function Index() {
             </h1>
             <div className="hidden md:flex space-x-8">
               {/* <a href="/">Home</a> */}
-                      <DarkModeToggle
-                          onChange={setIsDarkMode}
-                          checked={isDarkMode}
-                          size={80}
-                        />
-                      <a
+              <a
                 href="#about"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
@@ -161,12 +158,13 @@ export default function Index() {
               >
                 Contact
               </a>
-              <button
+              {/* <button
                 onClick={toggleTheme}
                 className="px-4 py-2 border rounded-md text-muted-foreground hover:text-primary transition-colors"
               >
-                {theme === "light" ? "Dark Mode" : "Light Mode"}
-              </button>
+                {theme === "light" ? "Dark" : "Light  "}
+              </button> */}
+              <Switch checked={theme === "dark"} onChange={toggleTheme} />
             </div>
           </div>
         </div>
