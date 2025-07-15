@@ -16,8 +16,29 @@ import {
   Layers,
   ExternalLink,
 } from "lucide-react";
+import { useState, useEffect } from "react";
+import DarkModeToggle from "react-dark-mode-toggle";
+
 
 export default function Index() {
+  const [theme, setTheme] = useState("light");
+  const [isDarkMode, setIsDarkMode] = useState(() => false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.className = savedTheme;
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.className = newTheme;
+    localStorage.setItem("theme", newTheme);
+  };
+
   const skills = {
     languages: ["ReactJS", "Python", "SQL", "HTML", "CSS", "JavaScript"],
     frameworks: [
@@ -104,7 +125,13 @@ export default function Index() {
               Surya Dwivedi
             </h1>
             <div className="hidden md:flex space-x-8">
-              <a
+              {/* <a href="/">Home</a> */}
+                      <DarkModeToggle
+                          onChange={setIsDarkMode}
+                          checked={isDarkMode}
+                          size={80}
+                        />
+                      <a
                 href="#about"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
@@ -134,6 +161,12 @@ export default function Index() {
               >
                 Contact
               </a>
+              <button
+                onClick={toggleTheme}
+                className="px-4 py-2 border rounded-md text-muted-foreground hover:text-primary transition-colors"
+              >
+                {theme === "light" ? "Dark Mode" : "Light Mode"}
+              </button>
             </div>
           </div>
         </div>
