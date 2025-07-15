@@ -23,8 +23,6 @@ import Switch from '@mui/material/Switch';
 
 export default function Index() {
   const [theme, setTheme] = useState("dark");
-  const [isDarkMode, setIsDarkMode] = useState(() => false);
-  
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -32,7 +30,7 @@ export default function Index() {
       setTheme(savedTheme);
       document.documentElement.className = savedTheme;
     }
-  }, []);
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -494,7 +492,7 @@ export default function Index() {
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-semibold">
-                        🥈 2nd Place - Zenarate Hackathon
+                        🥈 nd Place - Zenarate Hackathon
                       </h3>
                       <p className="text-muted-foreground text-sm mt-2">
                         Secured 2nd place by developing Smart Learning Analytics
