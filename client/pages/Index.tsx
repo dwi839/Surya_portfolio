@@ -22,7 +22,7 @@ import Switch from '@mui/material/Switch';
 
 
 export default function Index() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const [isDarkMode, setIsDarkMode] = useState(() => false);
   
 
@@ -126,6 +126,7 @@ export default function Index() {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Surya Dwivedi
             </h1>
+            <div className="flex items-center gap-2">
             <div className="hidden md:flex space-x-8 items-center">
               {/* <a href="/">Home</a> */}
               <a
@@ -163,8 +164,9 @@ export default function Index() {
             <div className="flex items-center gap-2">
                 <Switch checked={theme === "dark"} onChange={toggleTheme} />
                 <span className="text-sm text-muted-foreground">
-                  {theme !== "dark" ? "Dark" : "Light"}
+                  {theme === "dark" ? "Dark" : "Light"}
                 </span>
+              </div>
               </div>
           </div>
         </div>
