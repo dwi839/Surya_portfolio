@@ -21,8 +21,16 @@ import DarkModeToggle from "react-dark-mode-toggle";
 import Switch from '@mui/material/Switch';
 
 
-export default function Index({ theme ,setTheme}: { theme: string ,setTheme: (theme: string) => void }) {
+export default function Index({ theme, setTheme }: { theme: string, setTheme: (theme: string) => void }) {
+  // const [theme, setTheme] = useState("dark");
 
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem("theme");
+  //   if (savedTheme) {
+  //     setTheme(savedTheme);
+  //     document.documentElement.className = savedTheme;
+  //   }
+  // }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -484,7 +492,7 @@ export default function Index({ theme ,setTheme}: { theme: string ,setTheme: (th
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-semibold">
-                        🥈 nd Place - Zenarate Hackathon
+                        🥈 2nd Place - Zenarate Hackathon
                       </h3>
                       <p className="text-muted-foreground text-sm mt-2">
                         Secured 2nd place by developing Smart Learning Analytics
