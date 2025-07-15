@@ -126,7 +126,7 @@ export default function Index() {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Surya Dwivedi
             </h1>
-            <div className="hidden md:flex space-x-8 items-center">
+            <div className="md:flex space-x-8 items-center">
               {/* <a href="/">Home</a> */}
               <a
                 href="#about"
