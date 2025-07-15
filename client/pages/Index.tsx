@@ -158,13 +158,12 @@ export default function Index() {
               >
                 Contact
               </a>
-              {/* <button
-                onClick={toggleTheme}
-                className="px-4 py-2 border rounded-md text-muted-foreground hover:text-primary transition-colors"
-              >
-                {theme === "light" ? "Dark" : "Light  "}
-              </button> */}
-              <Switch checked={theme === "dark"} onChange={toggleTheme} />
+              <div className="flex items-center gap-2">
+                <Switch checked={theme === "dark"} onChange={toggleTheme} />
+                <span className="text-sm text-muted-foreground">
+                  {theme === "dark" ? "Dark" : "Light"}
+                </span>
+              </div>
             </div>
           </div>
         </div>
