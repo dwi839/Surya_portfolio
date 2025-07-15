@@ -21,6 +21,7 @@ export default function Index() {
   const skills = {
     languages: ["ReactJS", "Python", "SQL", "HTML", "CSS", "JavaScript"],
     frameworks: [
+      "TypeScript",
       "React.js",
       "Redux",
       "Redux Toolkit",
@@ -163,7 +164,7 @@ export default function Index() {
                 Contact Me
               </a>
             </Button>
-            <Button variant="outline" size="lg" className="gap-2" asChild>
+            {/* <Button variant="outline" size="lg" className="gap-2" asChild>
               <a
                 href="https://github.com/suryadwivedi"
                 target="_blank"
@@ -172,7 +173,7 @@ export default function Index() {
                 <Github size={20} />
                 GitHub
               </a>
-            </Button>
+            </Button> */}
             <Button variant="outline" size="lg" className="gap-2" asChild>
               <a
                 href="https://www.linkedin.com/in/surya-dwivedi"
